@@ -1,11 +1,12 @@
 <h1><%= @cocktail.name %></h1>
+<%= cl_image_tag @cocktail.photo, width: 300, height: 400, crop: :fill, gravity: :auto %>
 <ul>
 <% @cocktail.doses.each do |dose| %>
    <li><%= dose.description %></li>
    <%= link_to "Delete", dose_path(dose), method: :delete  %>
 <% end %>
 </ul>
-<%= link_to "Add Dose", new_cocktail_dose_path(@cocktail)  %>
-<%= link_to "Back to the overview", cocktails_path  %>
+<%= link_to "Add Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"  %>
+<%= link_to "Back to the overview", cocktails_path, class: "btn btn-primary"  %>
 
 
